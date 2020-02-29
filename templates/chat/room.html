@@ -1,0 +1,138 @@
+<!-- chat/templates/chat/room.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Chat Room</title>
+
+    <!-- Icons -->
+    <link href="{{static_url('assets/css/icons.css')}}" rel="stylesheet" />
+
+    <!--Bootstrap.min css-->
+    <link
+      rel="stylesheet"
+      href="{{static_url('assets/plugins/bootstrap/css/bootstrap.min.css')}}"
+    />
+
+    <!-- Adon CSS -->
+    <link
+      href="{{static_url('assets/css/dashboard.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{static_url('css/main.css')}}"
+    />
+
+    <!-- Progress Bar -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{static_url( 'js/webrtc-adapter.js' )}}"></script>
+    <script src="{{ static_url( 'js/main.js' )}}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="videos">
+        <video id="remote" controls autoplay></video>
+        <video id="local" controls autoplay muted></video>
+      </div>
+    </div>
+    <div class="container-fluid pt-8">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="card shadow">
+            <div class="card-header">
+              <h2 class="mb-0">Total Course Attentiveness</h2>
+            </div>
+            <div class="card-body">
+              <!-- content -->
+              <div class="w3-container">
+                <div class="w3-light-grey w3-xxlarge">
+                  <div
+                    class="w3-container w3-green"
+                    style="width:50%"
+                    id="avg_bar"
+                  >
+                    80%
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-lg-4">
+          <div class="card socailicons facebook-like1 shadow">
+            <div class="card-body  mb-0">
+              <small class="social-title w3-large"> 80% + </small>
+              <div class="text-xxl text-white  mb-0" id="green">2175</div>
+              <!-- <i class="fab fa-facebook-f"></i> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <div class="card socailicons google-plus1 shadow">
+            <div class="card-body  mb-0">
+              <small class="social-title w3-large">50% to 80%</small>
+              <div class="text-xxl text-white  mb-0" id="yellow">2175</div>
+              <!-- <i class="fab fa-google"></i> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <div class="card socailicons twitter1 shadow">
+            <div class="card-body  mb-0">
+              <small class="social-title w3-large">less than 50%</small>
+              <div class="text-xxl text-white  mb-0" id="red">2175</div>
+              <!-- <i class="fab fa-twitter"></i> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <span id="status" class="small"></span>
+    </footer>
+
+    <script>
+      function create_post_room() {
+        console.log("create post is working!"); // sanity check
+        jQuery.support.cors = true;
+        $.ajax({
+          url: "https://1033cf20.ngrok.io/faculty/create_post_room", // the endpoint
+          type: "POST", // http method
+          data: { the_post: $("#post-text").val() }, // data sent with the post request
+
+          // handle a successful response
+          success: function(json) {
+            $("#post-text").val(""); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            $("#avg_bar").html(json.score);
+            $("#green").html(json.green);
+            $("#yellow").html(json.yellow);
+            $("#red").html(json.red);
+            $("#avg_bar").css("width", json.score + "%");
+            setTimeout(create_post_room, 1000);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function(xhr, errmsg, err) {
+            $("#results").html(
+              "<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
+                errmsg +
+                " <a href='#' class='close'>&times;</a></div>"
+            ); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+      }
+      create_post_room();
+    </script>
+  </body>
+</html>

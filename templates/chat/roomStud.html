@@ -1,0 +1,51 @@
+<!-- chat/templates/chat/room.html -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Chat Room</title>
+
+    <!-- Icons -->
+    <link href="{{static_url('assets/css/icons.css')}}" rel="stylesheet" />
+
+    <!--Bootstrap.min css-->
+    <link
+      rel="stylesheet"
+      href="{{static_url('assets/plugins/bootstrap/css/bootstrap.min.css')}}"
+    />
+
+    <!-- Adon CSS -->
+    <link
+      href="{{static_url('assets/css/dashboard.css')}}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{static_url('css/main.css')}}"
+    />
+
+    <!-- Progress Bar -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{static_url( 'js/webrtc-adapter.js' )}}"></script>
+    <script src="{{ static_url( 'js/main.js' )}}"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="videos">
+        <video id="remote" controls autoplay></video>
+        <video id="local" controls autoplay muted></video>
+      </div>
+    </div>
+
+
+    <footer>
+      <span id="status" class="small"></span>
+    </footer>
+
+  </body>
+</html>

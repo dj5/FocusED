@@ -1,0 +1,216 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+
+    <!-- Favicon -->
+    <link href="{% static 'assets/img/brand/favicon.png' %}" rel="icon" type="image/png">
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet"/>
+
+  <!-- Icons -->
+	<link href="{% static 'assets/css/icons.css' %}" rel="stylesheet">
+
+ <!--Bootstrap.min css-->
+ <link rel="stylesheet" href="{%  static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+ <!-- Adon CSS -->
+ <link href="{% static 'assets/css/dashboard.css' %}" rel="stylesheet" type="text/css">
+
+ <!-- Data table css -->
+ <link href="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.css' %}" rel="stylesheet" />
+ <link href="{% static 'assets/plugins/datatable/responsivebootstrap4.min.css' %}" rel="stylesheet" />
+
+  <!-- Custom scroll bar css-->
+  <link href="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.css' %}" rel="stylesheet" />
+
+<!-- Sidemenu Css -->
+<link href="{% static 'assets/plugins/toggle-sidebar/css/sidemenu.css' %}" rel="stylesheet">
+<!-- Sweet Alert JS -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <!-- Progress Bar -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body class="app sidebar-mini rtl">
+    <div id="global-loader"></div>
+    <div class="page">
+      <div class="page-main">
+
+<!-- Include Sidebar here -->
+{% include "sidebar.html" %}
+
+              <!-- Page content -->
+              <div class="container-fluid pt-8">
+
+                <div class="sortable">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-4">
+                      <div class="card shadow">
+                        <div class="card-body">
+                          <a href="student_overview"
+                            ><h3 class="card-title">
+                              <center>Student ONE</center>
+                            </h3></a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-lg-4">
+                      <div class="card shadow">
+                        <div class="card-body">
+                          <h3 class="card-title">
+                            <center>Student SECOND</center>
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-xl-12">
+                      <div class="card shadow">
+                        <div class="card-header">
+                          <h2 class="mb-0">Total Course Attentiveness</h2>
+                        </div>
+                        <div class="card-body">
+                          <!-- content -->
+                          <div class="w3-container">
+                            <div class="w3-light-grey w3-xxlarge">
+                              <div
+                                class="w3-container w3-green"
+                                style="width:50%" id="avg_bar">
+                                80%
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                     <div class="col-md-12 col-lg-4">
+										<div class="card socailicons facebook-like1 shadow">
+											<div class="card-body  mb-0">
+												<small class="social-title w3-large">80% +</small>
+												<div class="text-xxl text-white  mb-0" id="green">2175</div>
+												<!-- <i class="fab fa-facebook-f"></i> -->
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-4">
+										<div class="card socailicons google-plus1 shadow">
+											<div class="card-body  mb-0">
+												<small class="social-title w3-large">50% to 80%</small>
+												<div class="text-xxl text-white  mb-0" id="yellow">2175</div>
+												<!-- <i class="fab fa-google"></i> -->
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12 col-lg-4">
+										<div class="card socailicons twitter1 shadow">
+											<div class="card-body  mb-0">
+												<small class="social-title w3-large">less than 50%</small>
+												<div class="text-xxl text-white  mb-0" id="red">2175</div>
+												<!-- <i class="fab fa-twitter"></i> -->
+											</div>
+										</div>
+									</div> 
+                  </div>
+                  <!-- Row -->
+                </div>
+                <!-- Sortable -->
+
+                <!-- Footer -->
+                <!-- <footer class="footer">
+								<div class="row align-items-center justify-content-xl-between">
+									<div class="col-xl-6">
+										<div class="copyright text-center text-xl-left text-muted">
+											<p class="text-sm font-weight-500">Copyright 2018 © All Rights Reserved. Adon Dashboard Template</p>
+										</div>
+									</div>
+									<div class="col-xl-6">
+										<p class="float-right text-sm font-weight-500">Designed &amp; Passion With: <a href="#">Spurko</a></p>
+									</div>
+								</div>
+							</footer> -->
+                <!-- Footer -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- app-content -->
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Adon Scripts -->
+   <!-- Core -->
+	<script src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  	<!-- Data tables -->
+	<script src="{% static 'assets/plugins/datatable/jquery.dataTables.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/dataTables.responsive.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/responsive.bootstrap4.min.js' %}"></script>
+
+    <!-- Optional JS -->
+    <script src="{% static 'assets/plugins/chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/chart.js/dist/Chart.extension.js' %}"></script>
+
+   <!-- Fullside-menu Js-->
+	<script src="{% static 'assets/plugins/toggle-sidebar/js/sidemenu.js' %}"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script src="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+	<!-- Adon JS -->
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="{% static 'assets/js/datatable.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/particles.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/app-db.js' %}"></script>
+
+	<script src="{% static 'assets/plugins/push/push.js' %}"></script>
+	<script src="{% static 'assets/plugins/push/serviceWorker.min.js' %}"></script>
+  <script>function create_post() {
+    console.log("create post is working!") // sanity check
+    $.ajax({
+        url : "create_post", // the endpoint
+        type : "POST", // http method
+        data : { the_post : $('#post-text').val() }, // data sent with the post request
+
+
+          // handle a successful response
+          success: function(json) {
+            $("#post-text").val(""); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            $("#avg_bar").html(json.score+"%");
+            $("#green").html(json.green);
+            $("#yellow").html(json.yellow);
+            $("#red").html(json.red);
+            $("#avg_bar").css("width", json.score + "%");
+          //  setTimeout(create_post, 1000);
+            console.log("success"); // another sanity check
+          },
+        // handle a non-successful response
+          error : function(xhr,errmsg,err) {
+            $('#results').html("<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: "+errmsg+
+                " <a href='#' class='close'>&times;</a></div>"); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+        }
+    });
+};
+create_post()</script>
+  </body>
+
+  <!-- Mirrored from spruko.com/demo/adon/cards.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Dec 2018 09:46:20 GMT -->
+</html>

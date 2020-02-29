@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Title -->
+	<title>Real-time Attentiveness Detection System</title>
+
+	<!-- Favicon -->
+	<link href="{% static 'assets/img/brand/favicon.png' %}" rel="icon" type="image/png">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="{% static 'assets/css/icons.css' %}" rel="stylesheet">
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Adon CSS -->
+	<link href="{% static 'assets/css/dashboard.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- Single-page CSS -->
+	<link href="{% static 'assets/plugins/single-page/css/main.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body class="bg-primary">
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-5">
+				<form class="login100-form validate-form" method="post">
+                    {% csrf_token %}
+					<div class="logo-img text-center pb-3">
+						<img src="{% static 'assets/img/brand/logo-dark1.png' %}"  alt="logo-img">
+					</div>
+					<span class="login100-form-title">
+						Enter Student Details
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Valid Roll No. is required">
+						<input class="input100" type="text" name="roll" required placeholder="Roll No.">
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<input type="submit" class="login100-form-btn btn-primary" name="btnLogin" value="Capture Images" />
+					</div>
+
+					<div class="text-center pt-2">
+						<p style="color: red;" id="error">
+                            {% for message in messages %}
+                            {{ message }}
+                            {% endfor %}
+					    </p>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="particles-js" style="position: absolute; z-index: -1; top: 0%;height: 99%; width: 100%;"></div>
+	</div>
+
+	<!-- Core -->
+	<script src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/particles.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/app.js' %}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

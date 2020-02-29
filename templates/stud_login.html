@@ -1,0 +1,269 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+
+	<!-- Title -->
+	<title>Real-time Attentiveness Detection</title>
+
+	<!-- Favicon -->
+	<link href="{% static 'assets/img/brand/favicon.png' %}" rel="icon" type="image/png">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="{% static 'assets/css/icons.css' %}" rel="stylesheet">
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="{%  static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Adon CSS -->
+	<link href="{% static 'assets/css/dashboard.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- Data table css -->
+	<link href="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/plugins/datatable/responsivebootstrap4.min.css' %}" rel="stylesheet" />
+
+	<link href="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.css' %}" rel="stylesheet" />
+
+	<!-- Sidemenu Css -->
+	<link href="{% static 'assets/plugins/toggle-sidebar/css/sidemenu.css' %}" rel="stylesheet">
+
+	<!-- Sweet Alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- JQuery CDN -->
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+
+    <script>
+        $( document ).ready(function() {
+            if(localStorage.getItem('startDate'))
+            {
+                start_timer();
+            }
+        });
+    </script>
+    <style>
+        .scrollable-table
+        {
+            overflow: scroll;
+            height: 250px;
+        }
+    </style>
+
+</head>
+
+<body class="app sidebar-mini rtl" >
+	<div id="global-loader" ></div>
+	<div class="page">
+		<div class="page-main">
+			{% include "sidebarStudent.html" %}
+			
+            <div class="container-fluid pt-8">
+				<div class="page-header mt-0  p-3">
+					<h3 class="mb-sm-0">Student Dashboard</h3>
+					<ol class="breadcrumb mb-0">
+						<li class="breadcrumb-item"><a href="#"><i class="fe fe-home"></i></a></li>
+						<li class="breadcrumb-item active" aria-current="page">DashBoard</li>
+					</ol>
+				</div>
+
+				<div class="sortable">
+
+					<div class="row">
+
+						<div class="col-md-12 col-lg-4">
+							<div class="card shadow">
+								<div class="card-header ">
+									<h2 class="mb-0 ">Student</h2>
+								</div>
+								<div class="card-body text-center">
+									<img class="avatar avatar-xxl brround" src="{% static 'assets/img/faces/male/18.jpg' %}" alt="avatra-img">
+									<h4 class="h4 mb-0 mt-3 font-600">James Thomas</h4>
+									<left><p class="card-text text-sm">Course Name : Python<br>
+																	   Lecture Code : 66<br>
+																	   Span : No<br>
+																	   Date : 28 Feb 2020</p></left>
+								</div>
+							</div>
+						</div>
+
+            </div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="particles-js" style="position: absolute; z-index: -1; top: 0%;height: 99%; width: 100%;"></div>
+	</div>
+
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+	<!-- Core -->
+	<script src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/chart-circle/circle-progress.min.js' %}"></script>
+
+    <!-- Optional JS -->
+	<script src="{% static 'assets/plugins/chart.js/dist/Chart.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/chart.js/dist/Chart.extension.js' %}"></script>
+	
+    <!-- flot JS -->
+    <!--
+	<script src="{% static 'assets/plugins/chart-flot/jquery.flot.js'  %}"></script>
+	<script src="{% static 'assets/plugins/chart-flot/jquery.flot.fillbetween.js' %}"></script>
+	<script src="{% static 'assets/plugins/chart-flot/jquery.flot.pie.js' %}"></script>
+	<script src="{% static 'assets/js/flot.js' %}"></script>
+    -->
+
+	<!-- Data tables -->
+	<script src="{% static 'assets/plugins/datatable/jquery.dataTables.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/dataTables.responsive.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/responsive.bootstrap4.min.js' %}"></script>
+
+	<!-- Fullside-menu Js-->
+	<script src="{% static 'assets/plugins/toggle-sidebar/js/sidemenu.js' %}"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script src="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+	<!-- Adon JS -->
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+	<script src="{% static 'assets/js/datatable.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/particles.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/app-db.js' %}"></script>
+
+
+    <!-- Push Notifications -->
+	<script src="{% static 'assets/plugins/push/push.js' %}"></script>
+	<script src="{% static 'assets/plugins/push/serviceWorker.min.js' %}"></script>
+
+
+
+    <!--Lecture Timer-->
+    <script>
+        
+        function del_date() {
+            localStorage.removeItem("startDate");
+        }
+
+        function start_timer() {
+            var countDownDate = localStorage.getItem('startDate');
+            if (countDownDate) {
+                countDownDate = new Date(countDownDate);
+            } else {
+                countDownDate = new Date();
+                localStorage.setItem('startDate', countDownDate);
+            }
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get todays date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                var distance = now - countDownDate.getTime();
+
+                // Time calculations for days, hours, minutes and seconds
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                //At particular Time like 15 mins or 30 mins, mark attendance of present students
+                /*
+                if(hours === 15)
+                {
+                    $.ajax(
+                        {
+                            type:"POST",
+                            url:"/faculty/attendance",
+                            success: function () {
+                                swal("Done!","Attendance Marked","success");
+                            }
+                        }
+                    )
+                }
+                */
+                document.getElementById('hrs').innerHTML=''+hours+'';
+                document.getElementById('min').innerHTML=''+minutes+'';
+                document.getElementById('sec').innerHTML=''+seconds+'';
+            }, 1000);
+        }
+
+    </script>
+
+    <!-- SWAL -->
+    <!-- <script>
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+                swal("Done", "{{ message }}", "success");
+                if('{{ message }}' === 'Lecture is started..')
+                {
+                    start_timer();
+                }
+            {% endif %}
+        {% endfor %}
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+                swal("Error", "{{ message }}", "error");
+            {% endif %}
+        {% endfor %}
+    </script> -->
+
+    <!--Notifications Ajax-->
+ <!--   <script>
+
+        function getNotifications()
+        {
+            $.ajax(
+            {
+                type:"POST",
+                url:"/faculty/notifications",
+                success: function (data) {
+                    for(var i=0;i<data.length;i++)
+                    {
+                        Push.create("New Activity", {
+						    body: data[i]["Roll"]+" "+data[i]["Description"],
+						    icon: "{% static 'assets/img/brand/logo-dark1.png' %}",
+						    timeout: 1500,
+						    onClick: function () {
+						        window.focus();
+						        window.location="/faculty/dashboard";
+						    }
+						});
+                    }
+                }
+            })
+        }
+        setInterval(function () {
+            getNotifications()
+        },6000);
+
+    </script> -->
+
+    <!-- Canvas JS Live Chart -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="{% static 'assets/js/AttChart.js' %}"></script>
+
+
+
+
+
+
+
+</body>
+
+
+</html>

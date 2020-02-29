@@ -1,0 +1,214 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!-- Mirrored from spruko.com/demo/adon/charts-chartjs.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Dec 2018 09:46:35 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+    <script src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+
+    <!-- Optional JS -->
+    <script src="{% static 'assets/plugins/chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/chart.js/dist/Chart.extension.js' %}"></script>
+    <script src="{% static 'assets/js/chartjs.js' %}"></script>
+
+    <!-- Title -->
+    <title>Real-time Attentiveness Detection</title>
+
+    <!-- Favicon -->
+    <link
+      href="{% static 'assets/img/brand/favicon.png' %}"
+      rel="icon"
+      type="image/png"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link href="{% static 'assets/css/icons.css' %}" rel="stylesheet" />
+
+    <!--Bootstrap.min css-->
+    <link
+      rel="stylesheet"
+      href="{%  static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}"
+    />
+
+    <!-- Adon CSS -->
+    <link
+      href="{% static 'assets/css/dashboard.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Custom scroll bar css-->
+    <link
+      href="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Sidemenu Css -->
+    <link
+      href="{% static 'assets/plugins/toggle-sidebar/css/sidemenu.css' %}"
+      rel="stylesheet"
+    />
+    <!-- Sweet Alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!-- Progress Bar -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  </head>
+  <body class="app sidebar-mini rtl">
+    <div id="global-loader"></div>
+    <div class="page">
+      <div class="page-main">
+        <!-- Sidebar menu-->
+        {% include "sidebar.html" %}
+
+        <!-- Page content -->
+        <div class="container-fluid pt-8">
+          <div class="page-header mt-0  p-3">
+            <h3 class="mb-sm-0">Lectures</h3>
+          </div>
+
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="card shadow">
+                <div class="card-header bg-transparent">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h6 class="text-uppercase text-muted ls-1 mb-1">
+                        Chart
+                      </h6>
+                      <h2 class="mb-0">Bar chart</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas
+                    id="Chart"
+                    class="chartjs-render-monitor h-300"
+                  ></canvas>
+                </div>
+              </div>
+            </div>
+
+            <!-- <div class="col-xl-6">
+              <div class="card shadow ">
+                <div class="card-header bg-transparent">
+                  <div class="row align-items-center">
+                    <div class="col">
+                      <h6 class="text-uppercase text-muted ls-1 mb-1">Chart</h6>
+                      <h2 class="mb-0">Single Bar chart</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <canvas
+                    id="Chart2"
+                    class="chartjs-render-monitor h-300"
+                  ></canvas>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="col-12">
+              <div class="card shadow overflow-hidden">
+                <div class="card-header table-primary border-0">
+                  <h2 class=" mb-0">Lecture 1</h2>
+                </div>
+                <div class="">
+                  <div class="grid-margin">
+                    <div class="">
+                      <div class="table-responsive">
+                        <table
+                          class="table card-table  table-primary table-vcenter text-nowrap  align-items-center"
+                        >
+                          <thead class="thead-light">
+                            <tr>
+                              <th>Sr.No.</th>
+                              <th>Attentiveness</th>
+                              <th>Time/Count</th>
+                              <th>Date</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>1</td>
+                              <td class="text-sm font-weight-600">
+                                Head Movement
+                              </td>
+                              <td>5</td>
+                              <td class="text-nowrap">July 13, 2018</td>
+                            </tr>
+                            <tr>
+                              <td>2</td>
+                              <td class="text-sm font-weight-600">
+                                Yanwing
+                              </td>
+                              <td>3</td>
+                              <td class="text-nowrap">June 15, 2018</td>
+                            </tr>
+                            <tr>
+                              <td>3</td>
+                              <td class="text-sm font-weight-600">
+                                Sleep
+                              </td>
+                              <td>35</td>
+                              <td class="text-nowrap">July 8, 2018</td>
+                            </tr>
+                            <tr>
+                              <td>4</td>
+                              <td class="text-sm font-weight-600">
+                                Gaze Unsure
+                              </td>
+                              <td>16</td>
+                              <td class="text-nowrap">June 28, 2018</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- app-content-->
+      </div>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Adon Scripts -->
+
+    <!-- Core -->
+
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Optional JS -->
+    <!-- <script src="% static 'assets/plugins/chart.js/dist/Chart.min.js' %}"></script>
+    <script src="% static 'assets/plugins/chart.js/dist/Chart.extension.js' %}"></script>
+    <script src="% static 'assets/js/chartjs.js' %}"></script> -->
+
+    <!-- Fullside-menu Js-->
+    <script src="{% static 'assets/plugins/toggle-sidebar/js/sidemenu.js' %}"></script>
+
+    <!-- Custom scroll bar Js-->
+    <script src="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+    <!-- Adon JS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+  </body>
+
+  <!-- Mirrored from spruko.com/demo/adon/charts-chartjs.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Dec 2018 09:46:35 GMT -->
+</html>

@@ -1,0 +1,351 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <!-- Mirrored from spruko.com/demo/adon/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 30 Dec 2018 09:45:58 GMT -->
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      name="viewport"
+    />
+
+    <!-- Tabs CSS -->
+    <link
+      href="{% static 'assets/plugins/tabs/style.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Progress Bar -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <!-- Optional JS -->
+    <!-- <script src="assets/plugins/chart.js/dist/Chart.min.js"></script>
+		<script src="assets/plugins/chart.js/dist/Chart.extension.js"></script>
+		<script src="assets/js/chartjs.js"></script> -->
+
+    <!-- Title -->
+    <title>Real-time Attentiveness Detection</title>
+
+    <!-- Favicon -->
+    <link
+      href="{% static 'assets/img/brand/favicon.png' %}"
+      rel="icon"
+      type="image/png"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800"
+      rel="stylesheet"
+    />
+
+    <!-- Icons -->
+    <link href="{% static 'assets/css/icons.css' %}" rel="stylesheet" />
+
+    <!--Bootstrap.min css-->
+    <link
+      rel="stylesheet"
+      href="{%  static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}"
+    />
+
+    <!-- Adon CSS -->
+    <link
+      href="{% static 'assets/css/dashboard.css' %}"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Data table css -->
+    <link
+      href="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'assets/plugins/datatable/responsivebootstrap4.min.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Custom scroll bar css-->
+    <link
+      href="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Sidemenu Css -->
+    <link
+      href="{% static 'assets/plugins/toggle-sidebar/css/sidemenu.css' %}"
+      rel="stylesheet"
+    />
+
+    <!-- Sweet Alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body class="app sidebar-mini rtl">
+    <div id="global-loader"></div>
+    <div class="page">
+      <div class="page-main">
+        {% include "sidebar.html" %}
+
+        <!-- Page content -->
+        <div class="container-fluid pt-8">
+          <div class="page-header mt-0 p-3">
+            <h3 class="mb-sm-0">Student Overview</h3>
+          </div>
+
+          <div class="row finance-content justify-content-xl-between">
+            <div class="col-xl-5 col-md-5">
+              <div class="card shadow text-center">
+                <div class="card-body">
+                  <h3 class="mb-3">Attentiveness</h3>
+                  <div
+                    class="chart-circle"
+                    data-value="0.75"
+                    data-thickness="10"
+                    data-color="#ad59ff"
+                  >
+                    <canvas width="128" height="128"></canvas>
+                    <a href="student_attentiveness"
+                      ><div class="chart-circle-value">
+                        <div class="text-xxl" id="attentive_pie">75%</div>
+                      </div></a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-5 col-md-5">
+              <div class="card shadow text-center">
+                <div class="card-body">
+                  <h3 class="mb-3">Emotion</h3>
+                  <div
+                    class="chart-circle"
+                    data-value="0.55"
+                    data-thickness="10"
+                    data-color="#00d9bf"
+                  >
+                    <canvas width="128" height="128"></canvas>
+                    <div class="chart-circle-value">
+                      <div class="text-xxl" id="emotion_pie">55%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-5 col-md-5">
+              <div class="card shadow text-center">
+                <div class="card-body">
+                  <h3 class="mb-3">Interaction</h3>
+                  <!-- <img src="{% static 'assets/img/vo.png' %}" width="90" height="75"> -->
+                  <div
+                    class="chart-circle"
+                    data-value="0.30"
+                    data-thickness="10"
+                    data-color="#fc0"
+                  >
+                    <canvas width="128" height="128"></canvas>
+                    <div class="chart-circle-value">
+                      <div class="text-xxl" id="interaction_pie">30%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-5 col-md-5">
+              <div class="card shadow text-center">
+                <div class="card-body">
+                  <h3 class="mb-3">Total Experience</h3>
+
+                  <div
+                    class="chart-circle"
+                    data-value="0.45"
+                    data-thickness="10"
+                    data-color="#00b3ff"
+                  >
+                    <canvas width="128" height="128"></canvas>
+                    <div class="chart-circle-value">
+                      <div class="text-xxl" id="total_pie">45%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer -->
+        <!-- <footer class="footer">
+								<div class="row align-items-center justify-content-xl-between">
+									<div class="col-xl-6">
+										<div class="copyright text-center text-xl-left text-muted">
+											<p class="text-sm font-weight-500">Copyright 2018 © All Rights Reserved. Adon Dashboard Template</p>
+										</div>
+									</div>
+									<div class="col-xl-6">
+										<p class="float-right text-sm font-weight-500">Designed &amp; Passion With: <a href="#">Spurko</a></p>
+									</div>
+								</div>
+							</footer> -->
+        <!-- Footer -->
+      </div>
+    </div>
+    <!-- Back to top -->
+    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Adon Scripts -->
+
+    <!-- Core -->
+    <script src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.js' %}"></script>
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/chart-circle/circle-progress.min.js' %}"></script>
+
+    <!-- Optional JS -->
+    <script src="{% static 'assets/plugins/chart.js/dist/Chart.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/chart.js/dist/Chart.extension.js' %}"></script>
+
+    <!-- Fullside-menu Js-->
+    <script src="{% static 'assets/plugins/toggle-sidebar/js/sidemenu.js' %}"></script>
+
+    <!-- Custom scroll bar Js-->
+    <script src="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+    <!-- peitychart -->
+    <script src="{% static 'assets/plugins/peitychart/jquery.peity.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/peitychart/peitychart.init.js' %}"></script>
+
+    <!-- Adon JS -->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
+    <script src="{% static 'assets/js/dashboard-finance.js' %}"></script>
+
+    <script>
+      function create_post_Attentiveness() {
+        console.log("create post is working!"); // sanity check
+        jQuery.support.cors = true;
+        $.ajax({
+          url: "create_post_Attentiveness", // the endpoint
+          type: "POST", // http method
+          data: { the_post: $("#post-text").val() }, // data sent with the post request
+
+          // handle a successful response
+          success: function(json) {
+            $("#post-text").val(""); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            $("#attentive_pie").html(json.score + "%");
+            //  setTimeout(create_post_Attentiveness, 1000);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function(xhr, errmsg, err) {
+            $("#results").html(
+              "<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
+                errmsg +
+                " <a href='#' class='close'>&times;</a></div>"
+            ); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+      }
+      create_post_Attentiveness();
+    </script>
+
+    <script>
+      function create_post_Interaction() {
+        console.log("create post is working!"); // sanity check
+        jQuery.support.cors = true;
+        $.ajax({
+          url: "create_post_Interaction", // the endpoint
+          type: "POST", // http method
+          data: { the_post: $("#post-text").val() }, // data sent with the post request
+
+          // handle a successful response
+          success: function(json) {
+            $("#post-text").val(""); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            $("#interaction_pie").html(json.score + "%");
+            //  setTimeout(create_post_Interaction, 1000);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function(xhr, errmsg, err) {
+            $("#results").html(
+              "<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
+                errmsg +
+                " <a href='#' class='close'>&times;</a></div>"
+            ); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+      }
+      create_post_Interaction();
+    </script>
+
+    <script>
+      function create_post_Emotion() {
+        console.log("create post is working!"); // sanity check
+        jQuery.support.cors = true;
+        $.ajax({
+          url: "create_post_Emotion", // the endpoint
+          type: "POST", // http method
+          data: { the_post: $("#post-text").val() }, // data sent with the post request
+
+          // handle a successful response
+          success: function(json) {
+            $("#post-text").val(""); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            $("#emotion_pie").html(json.score + "%");
+            //   setTimeout(create_post_Emotion, 1000);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function(xhr, errmsg, err) {
+            $("#results").html(
+              "<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
+                errmsg +
+                " <a href='#' class='close'>&times;</a></div>"
+            ); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+      }
+      create_post_Emotion();
+    </script>
+
+    <script>
+      function create_post_Total() {
+        console.log("create post is working!"); // sanity check
+        jQuery.support.cors = true;
+        $.ajax({
+          url: "create_post_Total", // the endpoint
+          type: "POST", // http method
+          data: { the_post: $("#post-text").val() }, // data sent with the post request
+
+          // handle a successful response
+          success: function(json) {
+            $("#post-text").val(""); // remove the value from the input
+            console.log(json); // log the returned json to the console
+            $("#total_pie").html(json.score + "%");
+            //   setTimeout(create_post_Emotion, 1000);
+            console.log("success"); // another sanity check
+          },
+
+          // handle a non-successful response
+          error: function(xhr, errmsg, err) {
+            $("#results").html(
+              "<div class='alert-box alert radius' data-alert>Oops! We have encountered an error: " +
+                errmsg +
+                " <a href='#' class='close'>&times;</a></div>"
+            ); // add the error to the dom
+            console.log(xhr.status + ": " + xhr.responseText); // provide a bit more info about the error to the console
+          }
+        });
+      }
+      create_post_Total();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+
+<head>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+
+
+	<!-- Title -->
+	<title>Real-time Attentiveness Detection</title>
+
+	<!-- Favicon -->
+	<link href="{% static 'assets/img/brand/favicon.png' %}" rel="icon" type="image/png">
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800" rel="stylesheet">
+
+	<!-- Icons -->
+	<link href="{% static 'assets/css/icons.css' %}" rel="stylesheet">
+
+	<!--Bootstrap.min css-->
+	<link rel="stylesheet" href="{%  static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+
+	<!-- Adon CSS -->
+	<link href="{% static 'assets/css/dashboard.css' %}" rel="stylesheet" type="text/css">
+
+	<!-- Data table css -->
+	<link href="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.css' %}" rel="stylesheet" />
+	<link href="{% static 'assets/plugins/datatable/responsivebootstrap4.min.css' %}" rel="stylesheet" />
+
+	<link href="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.css' %}" rel="stylesheet" />
+
+	<!-- Sidemenu Css -->
+	<link href="{% static 'assets/plugins/toggle-sidebar/css/sidemenu.css' %}" rel="stylesheet">
+	<!-- Sweet Alert JS -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+<body class="app sidebar-mini rtl" >
+	<div id="global-loader" ></div>
+	<div class="page">
+		<div class="page-main">
+			{% include "sidebar.html" %}
+
+            <!-- Page content -->
+                <div class="container-fluid pt-8">
+                    <form method="post" id="myForm">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card shadow">
+                                    <div class="card-header">
+                                        <h2 class="mb-0">Change Password</h2>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <ul class="list-inline wizard mb-0">
+                                                    <li class="previous list-inline-item">
+                                                        <input type="submit" name="submit" class="btn btn-primary mb-0 waves-effect waves-light">
+                                                    </li>
+                                                </ul>
+                                            </div>
+										</div>
+									</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+        </div>
+    </div>
+			</div>
+			<!-- app-content-->
+		</div>
+		<div id="particles-js" style="position: absolute; z-index: -1; top: 0%;height: 99%; width: 100%;"></div>
+	</div>
+	<!-- Back to top -->
+	<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <!-- Core -->
+	<script src="{% static 'assets/plugins/jquery/dist/jquery.min.js' %}"></script>
+	<script src="{% static 'assets/js/popper.js' %}"></script>
+	<script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+
+
+	<!-- Data tables -->
+	<script src="{% static 'assets/plugins/datatable/jquery.dataTables.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/dataTables.bootstrap4.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/dataTables.responsive.min.js' %}"></script>
+	<script src="{% static 'assets/plugins/datatable/responsive.bootstrap4.min.js' %}"></script>
+
+	<!-- Fullside-menu Js-->
+	<script src="{% static 'assets/plugins/toggle-sidebar/js/sidemenu.js' %}"></script>
+
+	<!-- Custom scroll bar Js-->
+	<script src="{% static 'assets/plugins/customscroll/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+
+	<!-- Adon JS -->
+	<script src="{% static 'assets/js/custom.js' %}"></script>
+	<script src="{% static 'assets/js/datatable.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/particles.js' %}"></script>
+	<script src="{% static 'assets/plugins/particles/app-db.js' %}"></script>
+
+
+	<script src="{% static 'assets/plugins/push/push.js' %}"></script>
+	<script src="{% static 'assets/plugins/push/serviceWorker.min.js' %}"></script>
+
+</body>
+
+
+</html>

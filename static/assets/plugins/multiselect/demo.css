@@ -1,0 +1,53 @@
+.dropdown {
+  
+}
+
+
+.dropdown dd,
+.dropdown dt {
+  margin: 0px;
+  padding: 0px;
+}
+
+.dropdown ul {
+  margin: -1px 0 0 0;
+}
+
+.dropdown dd {
+  position: relative;
+}
+
+
+
+.dropdown dt a {
+  
+  display: block;
+  border: 0;
+}
+
+
+
+.dropdown dd ul {
+  background-color: #fff;
+  border-radius: 4px;
+  color: #0c5ca5;
+  display: none;
+  left: 0px;
+  top: 2px;
+  width: 280px;
+  list-style: none;
+  height: 100px;
+  overflow: auto;
+  z-index: 99;
+}
+
+.dropdown span.value {
+  display: none;
+}
+
+
+
+.dropdown dd ul li a:hover {
+  background-color: #fff;
+}
+

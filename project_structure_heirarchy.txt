@@ -1,0 +1,10 @@
+root : sihackathon (project)
+	-sihackathon : core settings and configuration files here
+	-faculty (app) : settings and configs for faculty module here
+	-static : assets like css, js, imgs, etc. here
+	-templates : html template here
+
+urls :
+	-website.com/ : index (info,etc..)
+	-website.com/faculty : index/login of faculty module
+	-website.com/faculty/ : all other pages such as dashboard, settings, etc. here

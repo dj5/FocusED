@@ -1,0 +1,104 @@
+{% load static %}
+			<!-- Sidebar menu-->
+			<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+			<aside class="app-sidebar ">
+				<div class="sidebar-img">
+					<a class="navbar-brand" href="StudDashBoard"><img alt="..." class="navbar-brand-demo main-logo"  width="200px" src="{% static 'assets/img/brand/demo.png' %}"> <img alt="..." class="navbar-brand-img logo" style="padding-bottom: 10px;" src="{% static 'assets/img/brand/logo-dark1.png' %}"></a>
+					<ul class="side-menu">
+						<li class="slide">
+							<a class="side-menu__item"  href="StudDashBoard"><i class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Dashboard</span></a>
+						</li>
+                        <li class="slide">
+							<a class="side-menu__item"  href="https://92a7a795.ngrok.io/studentseminar/"><i class="side-menu__icon fe fe-monitor"></i><span class="side-menu__label">Start Seminar</span></a>
+						</li>
+
+                        <li class="slide">
+							<a class="side-menu__item"  href="logout"><i class="side-menu__icon ni ni-user-run"></i><span class="side-menu__label">Logout</span></a>
+						</li>
+
+						
+				</div>
+			</aside>
+			<!-- Sidebar menu-->
+
+			<!-- app-content-->
+			<div class="app-content ">
+				<div class="side-app">
+					<div class="main-content">
+						<div class="p-2 d-block d-sm-none navbar-sm-search">
+							<!-- Form -->
+							<form class="navbar-search navbar-search-dark form-inline ml-lg-auto">
+								<div class="form-group mb-0">
+									<div class="input-group input-group-alternative">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><i class="fas fa-search"></i></span>
+										</div><input class="form-control" placeholder="Search" type="text">
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- Top navbar -->
+						<nav class="navbar navbar-top  navbar-expand-md navbar-dark" id="navbar-main">
+							<div class="container-fluid">
+								<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
+
+								<!-- Horizontal Navbar -->
+		
+
+								<!-- Brand -->
+								<a class="navbar-brand pt-0 d-md-none" href="index-2.html">
+									<img src="{% static 'assets/img/brand/logo-dark2.png' %}" class="navbar-brand-img" alt="...">
+								</a>
+								
+								<!-- Form -->
+								<!-- User -->
+								
+								<!-- User -->
+								
+							</div>
+						</nav>
+						<!-- Top navbar-->
+						<!-- Top navbar -->
+						<nav class="navbar navbar-top  navbar-expand-md navbar-dark" id="navbar-main">
+							<div class="container-fluid">
+								<a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-toggle="sidebar" href="#"></a>
+								
+								<!-- Horizontal Navbar -->
+								
+
+								<!-- Brand -->
+								<a class="navbar-brand pt-0 d-md-none" href="index-2.html">
+									<img src="{% static 'assets/img/brand/logo-dark1.png' %}" class="navbar-brand-img" alt="...">
+								</a>
+								
+								
+								<!-- User -->
+								<!-- User -->
+								<ul class="navbar-nav align-items-center ">
+									<li class="nav-item dropdown">
+										<a aria-expanded="false" aria-haspopup="true" class="nav-link pr-md-0 mr-md-2 pl-1" data-toggle="dropdown" href="#" role="button">
+											<div class="media align-items-center">
+												<span class="avatar avatar-sm rounded-circle"><img alt="Image placeholder" src="{% static 'assets/img/faces/female/27.jpg' %}"></span>
+
+											</div>
+										</a>
+										<div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
+											<div class=" dropdown-header noti-title text-center border-bottom pb-3">
+													<h3 class="text-capitalize text-dark mb-1">Jainam<!--Name of faculty--> </h3>
+												<h6 class="text-overflow m-0">Faculty</h6>
+											</div>
+											<a class="dropdown-item" href="settings"><i class="ni ni-settings-gear-65"></i> <span>Settings</span></a>
+											<a class="dropdown-item" href="logout"><i class="ni ni-user-run"></i> <span>Logout</span></a>
+										</div>
+									</li>
+									
+									
+									<li class="nav-item d-none d-md-flex">
+										<div class="dropdown d-none d-md-flex mt-2 ">
+											<a class="nav-link full-screen-link  pr-0"><i class="fe fe-maximize-2 floating " id="fullscreen-button"></i></a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</nav>
+						<!-- Top navbar-->
